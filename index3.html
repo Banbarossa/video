@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+        video{
+            min-width: 100%;
+            min-height: 100%;
+
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        #btn{
+            background-color: #000;
+            border: none;
+            color: white;
+            padding: 10px 40px;
+            box-shadow: 1px 1px 2px white;
+            margin-top: 10px;
+        }
+        .subtitle{
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+        <video autoplay muted loop>
+            <source src="Frog.mp4" id="video">
+        </video>
+        <center class="subtitle">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis rem nemo at accusantium molestias ipsum. Animi excepturi quis inventore?</p>
+            <button id="btn" onclick="triggerbutton()">Pause</button>
+
+        </center>
+
+        <script>
+            var btn = document.getElementById("btn")
+            var video =document.querySelector("video")
+            function triggerbutton(){
+                if(video.paused){
+                    video.play()
+                    btn.innerHTML="Pause"
+                }else{
+                    video.pause()
+                    btn.innerHTML="Play"
+                }
+            }
+            
+        </script>
+    </body>
+</html>
